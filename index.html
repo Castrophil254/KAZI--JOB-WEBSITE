@@ -1,148 +1,221 @@
-<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KAZI JOB WEBSITE</title>
+  <meta name="description" content="Discover jobs and online tasks with KAZI JOB WEBSITE.">
+
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f4f7fb;
-      color: #222;
+      color: #1c2738;
     }
     header {
-      background: #073b75;
+      background: #083b75;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo { font-size: 22px; font-weight: bold; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; }
+    .hero {
+      background: linear-gradient(135deg, #0875c9, #083b75);
       color: white;
       text-align: center;
-      padding: 28px 15px;
+      padding: 65px 20px;
     }
-    nav {
-      background: #052b55;
-      padding: 14px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 25px auto;
-      padding: 15px;
-    }
+    .hero h1 { font-size: 38px; margin: 0 0 12px; }
+    .hero p { font-size: 18px; }
     .search {
-      width: 100%;
-      padding: 13px;
-      box-sizing: border-box;
-      border: 1px solid #bbb;
+      max-width: 600px;
+      margin: 25px auto 0;
+      display: flex;
+      gap: 8px;
+    }
+    .search input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px;
+      border: 0;
       border-radius: 6px;
-      margin-bottom: 20px;
+      font-size: 16px;
     }
-    .job {
-      background: white;
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 7px #ddd;
-    }
-    .job h3 { color: #073b75; }
-    .tag {
+    button, .apply {
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 6px;
+      background: #ffbf36;
+      color: #172033;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
       display: inline-block;
-      background: #e1edff;
-      padding: 5px 9px;
-      border-radius: 4px;
     }
+    .container { max-width: 1050px; margin: auto; padding: 35px 20px; }
+    .section-title { text-align: center; }
+    .categories, .jobs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+    .category, .job {
+      background: white;
+      padding: 22px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px #dce3ed;
+    }
+    .category { text-align: center; font-weight: bold; }
+    .job h3 { color: #083b75; }
+    .tag {
+      background: #e5efff;
+      color: #16447b;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+    .apply { background: #0875c9; color: white; }
+    .about {
+      background: white;
+      padding: 25px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .note { font-size: 13px; color: #596579; }
     footer {
-      background: #052b55;
+      background: #071f40;
       color: white;
       text-align: center;
-      padding: 18px;
+      padding: 22px;
+    }
+    @media (max-width: 550px) {
+      header { justify-content: center; }
+      .hero h1 { font-size: 30px; }
+      .search { flex-direction: column; }
+      nav { justify-content: center; }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <h1>KAZI JOB WEBSITE</h1>
-    <p>Discover job opportunities and online tasks.</p>
+    <div class="logo">💼 KAZI JOB WEBSITE</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#jobs">Find Jobs</a>
+      <a href="#about">About</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#jobs">Find Jobs</a>
-    <a href="#about">About Us</a>
-  </nav>
-
-  <main class="container" id="home">
-    <h2>Find Your Next Opportunity</h2>
-    <p>Search for jobs and tasks that match your interests.</p>
-
-    <section id="jobs">
-      <h2>Job Opportunities</h2>
-      <input
-        class="search"
-        id="search"
-        type="text"
-        placeholder="Search jobs or tasks..."
-        aria-label="Search jobs or tasks"
-      >
-
-      <div class="job">
-        <h3>Online Data Entry</h3>
-        <p>Example listing: Enter and organize information using a computer.</p>
-        <span class="tag">Online Task</span>
+  <main>
+    <section class="hero" id="home">
+      <h1>Find Jobs. Discover Opportunities.</h1>
+      <p>Explore job opportunities and online tasks in one place.</p>
+      <div class="search">
+        <input id="jobSearch" type="search"
+          placeholder="Search jobs or skills..."
+          aria-label="Search jobs">
+        <button type="button" id="searchButton">Search Jobs</button>
       </div>
-
-      <div class="job">
-        <h3>Computer Support Assistant</h3>
-        <p>Example listing: Assist with basic computer troubleshooting.</p>
-        <span class="tag">ICT</span>
-      </div>
-
-      <div class="job">
-        <h3>Content Writing</h3>
-        <p>Example listing: Help prepare articles and written content.</p>
-        <span class="tag">Freelance</span>
-      </div>
-
-      <p id="noResults" hidden>No matching listings found.</p>
     </section>
 
-    <section id="about">
-      <h2>About KAZI JOB WEBSITE</h2>
-      <p>
-        Our goal is to help people discover job opportunities
-        and online tasks in one place.
-      </p>
-      <p>Listings on this starter page are examples, not verified vacancies.</p>
+    <section class="container" id="categories">
+      <h2 class="section-title">Explore Categories</h2>
+      <div class="categories">
+        <div class="category">💻 Information Technology</div>
+        <div class="category">🌐 Online Tasks</div>
+        <div class="category">✍️ Content Writing</div>
+        <div class="category">📊 Data Entry</div>
+      </div>
+    </section>
+
+    <section class="container" id="jobs">
+      <h2 class="section-title">Featured Opportunities</h2>
+      <p class="note">These are sample listings, not verified vacancies.</p>
+
+      <div class="jobs">
+        <article class="job">
+          <span class="tag">Online Task</span>
+          <h3>Data Entry Assistant</h3>
+          <p>Help organize digital information and enter data accurately.</p>
+          <p><strong>Type:</strong> Example task</p>
+          <a class="apply" href="#contact">How to Apply</a>
+        </article>
+
+        <article class="job">
+          <span class="tag">ICT</span>
+          <h3>Computer Support Assistant</h3>
+          <p>Help with basic computer setup and troubleshooting.</p>
+          <p><strong>Type:</strong> Example role</p>
+          <a class="apply" href="#contact">How to Apply</a>
+        </article>
+
+        <article class="job">
+          <span class="tag">Freelance</span>
+          <h3>Content Writing Assistant</h3>
+          <p>Help prepare clear written content for online projects.</p>
+          <p><strong>Type:</strong> Example task</p>
+          <a class="apply" href="#contact">How to Apply</a>
+        </article>
+      </div>
+      <p id="noResults" hidden>No matching jobs found. Try another search.</p>
+    </section>
+
+    <section class="container" id="about">
+      <div class="about">
+        <h2>About KAZI JOB WEBSITE</h2>
+        <p>Our goal is to help people discover job opportunities and online tasks.</p>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="about">
+        <h2>Interested in a job?</h2>
+        <p>The application system is still being set up. Contact details and verified listings will be added soon.</p>
+        <p class="note">Never pay an unverified person to secure a job.</p>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2026 KAZI JOB WEBSITE. All rights reserved.</p>
+    <p>Connecting people with opportunities.</p>
   </footer>
 
   <script>
-    const search = document.getElementById("search");
-    const jobs = document.querySelectorAll(".job");
+    const searchInput = document.getElementById("jobSearch");
+    const searchButton = document.getElementById("searchButton");
+    const jobCards = document.querySelectorAll(".job");
     const noResults = document.getElementById("noResults");
 
-    search.addEventListener("input", function () {
-      const term = search.value.toLowerCase();
-      let visible = 0;
+    function searchJobs() {
+      const term = searchInput.value.trim().toLowerCase();
+      let count = 0;
 
-      jobs.forEach(function (job) {
-        const matches = job.textContent.toLowerCase().includes(term);
-        job.hidden = !matches;
-        if (matches) visible++;
+      jobCards.forEach(function(card) {
+        const matches = card.textContent.toLowerCase().includes(term);
+        card.hidden = !matches;
+        if (matches) count++;
       });
 
-      noResults.hidden = visible !== 0;
+      noResults.hidden = count > 0;
+    }
+
+    searchButton.addEventListener("click", searchJobs);
+    searchInput.addEventListener("input", searchJobs);
+    searchInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") searchJobs();
     });
   </script>
-
 </body>
 </html>

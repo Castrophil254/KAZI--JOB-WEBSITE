@@ -179,12 +179,81 @@
     </section>
 
     <section class="container" id="contact">
-      <div class="about">
-        <h2>Interested in a job?</h2>
-        <p>The application system is still being set up. Contact details and verified listings will be added soon.</p>
-        <p class="note">Never pay an unverified person to secure a job.</p>
-      </div>
-    </section>
+     
+<section class="container" id="contact">
+  <div class="about">
+    <h2>Apply for a Job</h2>
+    <p>Fill in your details to express your interest in a job.</p>
+
+    <form id="applicationForm">
+      <p>
+        <label for="applicantName">Full Name</label><br>
+        <input id="applicantName" name="name" type="text"
+          placeholder="Enter your full name" required>
+      </p>
+
+      <p>
+        <label for="applicantEmail">Email Address</label><br>
+        <input id="applicantEmail" name="email" type="email"
+          placeholder="Enter your email address" required>
+      </p>
+
+      <p>
+        <label for="jobTitle">Choose a Job</label><br>
+        <select id="jobTitle" name="job" required>
+          <option value="">Select a job</option>
+          <option>Data Entry Assistant</option>
+          <option>Computer Support Assistant</option>
+          <option>Content Writing Assistant</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="applicationMessage">Why do you want this job?</label><br>
+        <textarea id="applicationMessage" name="message"
+          rows="4" placeholder="Write a short message" required></textarea>
+      </p>
+
+      <button type="submit">Submit Application</button>
+      <p id="formMessage" role="status"></p>
+    </form>
+
+    <p class="note">Never pay an unverified person to secure a job.</p>
+  </div>
+</section>
+
+<style>
+  #applicationForm {
+    max-width: 550px;
+    margin: 20px auto;
+    text-align: left;
+  }
+
+  #applicationForm input,
+  #applicationForm select,
+  #applicationForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font: inherit;
+  }
+
+  #applicationForm button {
+    background: #0875c9;
+    color: white;
+  }
+</style>
+
+<script>
+  document.getElementById("applicationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    document.getElementById("formMessage").textContent =
+      "Your form is ready, but applications cannot be sent or stored until a submission service is connected.";
+  });
+</script>
+
   </main>
 
   <footer>

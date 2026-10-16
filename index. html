@@ -5,286 +5,184 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KAZI JOB WEBSITE</title>
-  <meta name="description" content="Discover jobs and online tasks with KAZI JOB WEBSITE.">
-
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #1c2738;
+      background: #f3f6fb;
+      color: #222;
+      line-height: 1.6;
     }
     header {
-      background: #083b75;
+      background: #073b75;
       color: white;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .logo { font-size: 22px; font-weight: bold; }
-    nav { display: flex; gap: 18px; flex-wrap: wrap; }
-    nav a { color: white; text-decoration: none; }
-    .hero {
-      background: linear-gradient(135deg, #0875c9, #083b75);
-      color: white;
+      padding: 24px 16px;
       text-align: center;
-      padding: 65px 20px;
     }
-    .hero h1 { font-size: 38px; margin: 0 0 12px; }
-    .hero p { font-size: 18px; }
-    .search {
-      max-width: 600px;
-      margin: 25px auto 0;
-      display: flex;
-      gap: 8px;
+    header h1 { margin: 0; }
+    nav {
+      background: #052b55;
+      padding: 12px;
+      text-align: center;
     }
-    .search input {
-      flex: 1;
-      min-width: 0;
-      padding: 14px;
-      border: 0;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-    button, .apply {
-      padding: 12px 18px;
-      border: 0;
-      border-radius: 6px;
-      background: #ffbf36;
-      color: #172033;
-      font-weight: bold;
-      cursor: pointer;
+    nav a {
+      color: white;
       text-decoration: none;
-      display: inline-block;
+      margin: 0 12px;
+      font-weight: bold;
     }
-    .container { max-width: 1050px; margin: auto; padding: 35px 20px; }
-    .section-title { text-align: center; }
-    .categories, .jobs {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 18px;
+    .hero {
+      background: #dceaff;
+      text-align: center;
+      padding: 45px 16px;
     }
-    .category, .job {
+    .hero h2 { color: #073b75; font-size: 30px; }
+    .container {
+      max-width: 950px;
+      margin: 25px auto;
+      padding: 20px;
+    }
+    .card, .about, .form-box {
       background: white;
       padding: 22px;
       border-radius: 10px;
-      box-shadow: 0 2px 10px #dce3ed;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px #00000012;
     }
-    .category { text-align: center; font-weight: bold; }
-    .job h3 { color: #083b75; }
-    .tag {
-      background: #e5efff;
-      color: #16447b;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 13px;
+    .jobs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
     }
-    .apply { background: #0875c9; color: white; }
-    .about {
-      background: white;
-      padding: 25px;
-      text-align: center;
-      border-radius: 10px;
+    .button {
+      display: inline-block;
+      background: #087443;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
     }
-    .note { font-size: 13px; color: #596579; }
+    label { display: block; font-weight: bold; margin-top: 14px; }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      font: inherit;
+    }
+    textarea { min-height: 100px; }
+    .notice { color: #8a3d00; font-size: 14px; }
     footer {
-      background: #071f40;
+      background: #052b55;
       color: white;
       text-align: center;
-      padding: 22px;
-    }
-    @media (max-width: 550px) {
-      header { justify-content: center; }
-      .hero h1 { font-size: 30px; }
-      .search { flex-direction: column; }
-      nav { justify-content: center; }
+      padding: 20px;
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="logo">💼 KAZI JOB WEBSITE</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#jobs">Find Jobs</a>
-      <a href="#about">About</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero" id="home">
-      <h1>Find Jobs. Discover Opportunities.</h1>
-      <p>Explore job opportunities and online tasks in one place.</p>
-      <div class="search">
-        <input id="jobSearch" type="search"
-          placeholder="Search jobs or skills..."
-          aria-label="Search jobs">
-        <button type="button" id="searchButton">Search Jobs</button>
-      </div>
-    </section>
+<header>
+  <h1>KAZI JOB WEBSITE</h1>
+  <p>Discover opportunities. Build your future.</p>
+</header>
 
-    <section class="container" id="categories">
-      <h2 class="section-title">Explore Categories</h2>
-      <div class="categories">
-        <div class="category">💻 Information Technology</div>
-        <div class="category">🌐 Online Tasks</div>
-        <div class="category">✍️ Content Writing</div>
-        <div class="category">📊 Data Entry</div>
-      </div>
-    </section>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#jobs">Jobs</a>
+  <a href="#about">About</a>
+  <a href="#apply">Apply</a>
+</nav>
 
-    <section class="container" id="jobs">
-      <h2 class="section-title">Featured Opportunities</h2>
-      <p class="note">These are sample listings, not verified vacancies.</p>
-
-      <div class="jobs">
-        <article class="job">
-          <span class="tag">Online Task</span>
-          <h3>Data Entry Assistant</h3>
-          <p>Help organize digital information and enter data accurately.</p>
-          <p><strong>Type:</strong> Example task</p>
-          <a class="apply" href="#contact">How to Apply</a>
-        </article>
-
-        <article class="job">
-          <span class="tag">ICT</span>
-          <h3>Computer Support Assistant</h3>
-          <p>Help with basic computer setup and troubleshooting.</p>
-          <p><strong>Type:</strong> Example role</p>
-          <a class="apply" href="#contact">How to Apply</a>
-        </article>
-
-        <article class="job">
-          <span class="tag">Freelance</span>
-          <h3>Content Writing Assistant</h3>
-          <p>Help prepare clear written content for online projects.</p>
-          <p><strong>Type:</strong> Example task</p>
-          <a class="apply" href="#contact">How to Apply</a>
-        </article>
-      </div>
-      <p id="noResults" hidden>No matching jobs found. Try another search.</p>
-    </section>
-
-    <section class="container" id="about">
-      <div class="about">
-        <h2>About KAZI JOB WEBSITE</h2>
-        <p>Our goal is to help people discover job opportunities and online tasks.</p>
-      </div>
-    </section>
-
-    <section class="container" id="contact">
-     
-<section class="container" id="contact">
-  <div class="about">
-    <h2>Apply for a Job</h2>
-    <p>Fill in your details to express your interest in a job.</p>
-
-    <form id="applicationForm">
-      <p>
-        <label for="applicantName">Full Name</label><br>
-        <input id="applicantName" name="name" type="text"
-          placeholder="Enter your full name" required>
-      </p>
-
-      <p>
-        <label for="applicantEmail">Email Address</label><br>
-        <input id="applicantEmail" name="email" type="email"
-          placeholder="Enter your email address" required>
-      </p>
-
-      <p>
-        <label for="jobTitle">Choose a Job</label><br>
-        <select id="jobTitle" name="job" required>
-          <option value="">Select a job</option>
-          <option>Data Entry Assistant</option>
-          <option>Computer Support Assistant</option>
-          <option>Content Writing Assistant</option>
-        </select>
-      </p>
-
-      <p>
-        <label for="applicationMessage">Why do you want this job?</label><br>
-        <textarea id="applicationMessage" name="message"
-          rows="4" placeholder="Write a short message" required></textarea>
-      </p>
-
-      <button type="submit">Submit Application</button>
-      <p id="formMessage" role="status"></p>
-    </form>
-
-    <p class="note">Never pay an unverified person to secure a job.</p>
-  </div>
+<section class="hero" id="home">
+  <h2>Find Your Next Job</h2>
+  <p>Explore job opportunities and take the next step in your career.</p>
+  <a class="button" href="#jobs">Explore Jobs</a>
 </section>
 
-<style>
-  #applicationForm {
-    max-width: 550px;
-    margin: 20px auto;
-    text-align: left;
-  }
+<main class="container">
+  <section id="jobs">
+    <h2>Featured Jobs</h2>
+    <div class="jobs">
+      <article class="card">
+        <h3>ICT Support Assistant</h3>
+        <p><strong>Category:</strong> Information Technology</p>
+        <p>Assist with computers, software and basic networking.</p>
+        <a class="button" href="#apply">Apply</a>
+      </article>
+      <article class="card">
+        <h3>Sales Assistant</h3>
+        <p><strong>Category:</strong> Sales</p>
+        <p>Help customers and support daily sales activities.</p>
+        <a class="button" href="#apply">Apply</a>
+      </article>
+      <article class="card">
+        <h3>Office Assistant</h3>
+        <p><strong>Category:</strong> Administration</p>
+        <p>Support office operations and organize documents.</p>
+        <a class="button" href="#apply">Apply</a>
+      </article>
+    </div>
+    <p class="notice">These are sample listings for demonstration, not verified vacancies.</p>
+  </section>
 
-  #applicationForm input,
-  #applicationForm select,
-  #applicationForm textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font: inherit;
-  }
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>KAZI JOB WEBSITE aims to help people discover job opportunities in one place.</p>
+    <p>Always confirm a vacancy with the employer. Never pay someone who promises to guarantee you a job.</p>
+  </section>
 
-  #applicationForm button {
-    background: #0875c9;
-    color: white;
-  }
-</style>
+  <section id="apply">
+    <h2>Apply for a Job</h2>
+    <div class="form-box">
+      <p>Fill in your details to express your interest in a job.</p>
+
+      <form id="applicationForm">
+        <label for="applicantName">Full Name</label>
+        <input id="applicantName" name="name" type="text" placeholder="Enter your full name" required>
+
+        <label for="applicantEmail">Email Address</label>
+        <input id="applicantEmail" name="email" type="email" placeholder="Enter your email address" required>
+
+        <label for="jobChoice">Choose a Job</label>
+        <select id="jobChoice" name="job" required>
+          <option value="">-- Select a job --</option>
+          <option>ICT Support Assistant</option>
+          <option>Sales Assistant</option>
+          <option>Office Assistant</option>
+        </select>
+
+        <label for="applicantMessage">Why are you interested?</label>
+        <textarea id="applicantMessage" name="message" placeholder="Write a short message" required></textarea>
+
+        <p><button class="button" type="submit">Submit Application</button></p>
+      </form>
+      <p id="formMessage" role="status"></p>
+      <p class="notice">Demo only: this form does not send or save applications yet.</p>
+    </div>
+  </section>
+
+  <section class="about" id="contact">
+    <h2>Contact</h2>
+    <p>Contact details will be added here soon.</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 KAZI JOB WEBSITE. All rights reserved.</p>
+</footer>
 
 <script>
   document.getElementById("applicationForm").addEventListener("submit", function(event) {
     event.preventDefault();
     document.getElementById("formMessage").textContent =
-      "Your form is ready, but applications cannot be sent or stored until a submission service is connected.";
+      "Thank you! The form is working as a demo, but your application has not been sent or saved.";
   });
 </script>
 
-  </main>
-
-  <footer>
-    <p>&copy; 2026 KAZI JOB WEBSITE. All rights reserved.</p>
-    <p>Connecting people with opportunities.</p>
-  </footer>
-
-  <script>
-    const searchInput = document.getElementById("jobSearch");
-    const searchButton = document.getElementById("searchButton");
-    const jobCards = document.querySelectorAll(".job");
-    const noResults = document.getElementById("noResults");
-
-    function searchJobs() {
-      const term = searchInput.value.trim().toLowerCase();
-      let count = 0;
-
-      jobCards.forEach(function(card) {
-        const matches = card.textContent.toLowerCase().includes(term);
-        card.hidden = !matches;
-        if (matches) count++;
-      });
-
-      noResults.hidden = count > 0;
-    }
-
-    searchButton.addEventListener("click", searchJobs);
-    searchInput.addEventListener("input", searchJobs);
-    searchInput.addEventListener("keydown", function(event) {
-      if (event.key === "Enter") searchJobs();
-    });
-  </script>
 </body>
 </html>
